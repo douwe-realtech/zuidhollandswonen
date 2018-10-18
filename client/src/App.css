@@ -1,0 +1,311 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,600|Playfair+Display:400i:600i");
+#hero {
+  background-image: url(img/hero2.jpg); }
+
+#pic-introductie {
+  background-image: url(img/introductie.jpg); }
+
+#pic-ligging {
+  background-image: url(img/ligging.jpg); }
+
+#pic-sub-0 {
+  background-image: url(img/hero2.jpg); }
+
+#pic-sub-1 {
+  background-image: url(img/entiteit.jpg); }
+
+#pic-sub-2 {
+  background-image: url(img/achterkant.jpg); }
+
+#pic-woningen {
+  background-image: url(img/interieur.jpg); }
+
+#pic-contact {
+  background-image: url(img/huis.jpg); }
+
+html, body {
+  font-family: 'Montserrat', serif;
+  font-weight: 300;
+  line-height: 2em;
+  color: #131310; }
+
+h1, h2, h3, h4, h5, nav {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-style: italic;
+  text-transform: capitalize; }
+
+nav {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #403F47;
+  color: white;
+  height: 3em;
+  width: 100%;
+  z-index: 1;
+  font-size: 1em;
+  -webkit-user-select: none;
+  user-select: none;
+  top: 0; }
+  nav h2 {
+    color: #D2AE90;
+    margin: 0 0 0 1em; }
+  nav #nav-logo {
+    color: #D2AE90;
+    margin-left: 1em;
+    height: 2em; }
+  nav .menu-toggle {
+    display: block;
+    position: relative;
+    padding-right: 1em; }
+    nav .menu-toggle input {
+      display: block;
+      width: 2.5em;
+      height: 2em;
+      position: absolute;
+      top: 0em;
+      right: 0.6em;
+      opacity: 0;
+      z-index: 2;
+      -webkit-touch-callout: none; }
+    nav .menu-toggle span {
+      display: block !important;
+      width: 2em;
+      height: 0.25em;
+      margin-bottom: 0.25em;
+      position: relative;
+      background: #f0fafd;
+      border-radius: 0.25em;
+      z-index: 1;
+      transform-origin: 0.25em 0;
+      transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease; }
+      nav .menu-toggle span:first-child {
+        transform-orign: 0% 0%; }
+      nav .menu-toggle span:nth-last-child(2) {
+        transform-orign: 0% 100%; }
+    nav .menu-toggle input:checked ~ span {
+      opacity: 1;
+      transform: rotate(45deg) translate(2px, -2px);
+      background: #D2AE90; }
+      nav .menu-toggle input:checked ~ span:nth-child(3) {
+        opacity: 0;
+        transform: rotate(0deg) scale(0.2, 0.2); }
+      nav .menu-toggle input:checked ~ span:nth-child(4) {
+        transform: rotate(-45deg) translate(0, 1px); }
+    nav .menu-toggle a {
+      color: #403F47;
+      text-decoration: none;
+      margin-right: 1em;
+      font-size: 1.5em;
+      line-height: 3em;
+      transition: all 0.4s ease-in-out; }
+    nav .menu-toggle a:hover {
+      color: #D2AE90; }
+  nav .menu {
+    position: absolute;
+    width: 12em;
+    margin: 0.75em 0em 0 -12em;
+    height: 100vh;
+    padding: 4em;
+    background: white;
+    -webkit-font-smoothing: antiaiased;
+    transform-orgin: 0% 0%;
+    transform: translate(100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+    box-shadow: 0 0 64px 0 rgba(0, 0, 0, 0.1); }
+    nav .menu a {
+      display: block; }
+  nav .menu-toggle input:checked ~ .menu {
+    transform: none; }
+
+a {
+  color: black; }
+  a:hover {
+    color: #D2AE90; }
+
+h1, h2, h3 {
+  margin: 0 1rem 2rem 1rem; }
+
+p {
+  margin: 0 1rem 0 1rem; }
+
+#hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  width: 100%;
+  margin-top: 3em;
+  background-position: center;
+  background-size: cover; }
+  #hero #logo {
+    width: 70vw; }
+  #hero h4 {
+    color: white; }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.content {
+  max-width: 50em;
+  margin: 6em 0 6em; }
+
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 100%; }
+  .section .picture {
+    order: 2;
+    background: #403F47;
+    height: 70vh;
+    width: 100%;
+    background-position: center;
+    background-size: cover; }
+  .section .button {
+    font-family: 'Montserrat', serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    border: none;
+    text-decoration: none;
+    background: #D2AE90;
+    color: #403F47 !important;
+    padding: 1rem 1.5rem;
+    margin-top: -4rem;
+    margin-bottom: 4rem;
+    cursor: pointer;
+    transition: opacity 0.2s ease-in-out;
+    border-radius: 2px; }
+    .section .button:hover {
+      opacity: 0.8; }
+
+.section:nth-child(3), .section:nth-child(4), .section:nth-child(6) {
+  background: #403F47;
+  color: white; }
+  .section:nth-child(3) h1, .section:nth-child(4) h1, .section:nth-child(6) h1 {
+    color: #D2AE90; }
+  .section:nth-child(3) a, .section:nth-child(4) a, .section:nth-child(6) a {
+    color: #D2AE90; }
+    .section:nth-child(3) a:hover, .section:nth-child(4) a:hover, .section:nth-child(6) a:hover {
+      color: white; }
+
+.sub {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  color: black;
+  flex-direction: column;
+  width: 100%; }
+  .sub .picture {
+    order: 0;
+    background: #403F47;
+    background-position: center;
+    background-size: cover; }
+
+@media screen and (min-width: 57em) {
+  nav #nav-logo {
+    color: #D2AE90;
+    margin-left: 1em;
+    height: 2em; }
+  nav .menu-toggle {
+    display: block;
+    position: relative;
+    padding-right: 1em; }
+    nav .menu-toggle input {
+      width: 0;
+      height: 0;
+      position: fixed; }
+    nav .menu-toggle span {
+      width: 0;
+      height: 0;
+      position: fixed; }
+    nav .menu-toggle a {
+      color: #f0fafd;
+      margin-right: 1em;
+      font-size: 1em;
+      line-height: 1em; }
+    nav .menu-toggle a:hover {
+      color: #D2AE90; }
+  nav .menu {
+    position: relative;
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    -webkit-font-smoothing: antiaiased;
+    transform-orgin: 0% 0%;
+    transform: translate(0, 0); }
+    nav .menu a {
+      display: inline; }
+  .content.center {
+    text-align: center; }
+  .sub {
+    flex-direction: row;
+    flex-wrap: no-wrap; }
+    .sub .content {
+      max-width: 50%;
+      margin: 0; }
+      .sub .content p {
+        margin: 0 2em 0 2em; }
+    .sub .picture {
+      min-height: 50vh;
+      width: 55%; }
+  .sub:nth-child(even) .picture {
+    order: 2; }
+  ul {
+    display: table;
+    margin: 0 auto; } }
+
+#inschrijf-formulier {
+  width: 100%; }
+  #inschrijf-formulier .content {
+    width: 100%; }
+  #inschrijf-formulier fieldset {
+    max-width: 100%;
+    border: none; }
+    #inschrijf-formulier fieldset h2 {
+      margin: 1rem 0 0.5rem 0; }
+    #inschrijf-formulier fieldset .form-item {
+      width: 100%;
+      text-align: left; }
+      #inschrijf-formulier fieldset .form-item label {
+        text-align: left;
+        font-weight: 600;
+        display: block;
+        font-size: 0.8rem;
+        line-height: 0.8em;
+        margin: 1rem 0 0.2rem 0;
+        color: #403F47; }
+      #inschrijf-formulier fieldset .form-item input {
+        border: none;
+        border-bottom: 1px solid #888;
+        width: 100%;
+        font-size: 1.5rem;
+        border-radius: 0; }
+      #inschrijf-formulier fieldset .form-item select {
+        position: relative;
+        left: 0; }
+      #inschrijf-formulier fieldset .form-item.checkbox {
+        width: 100%; }
+        #inschrijf-formulier fieldset .form-item.checkbox label {
+          font-weight: 300;
+          display: inline; }
+        #inschrijf-formulier fieldset .form-item.checkbox input {
+          width: auto;
+          display: inline; }
+  #inschrijf-formulier .button {
+    color: #f0fafd !important;
+    background: #403F47;
+    width: 24rem; }
+  #inschrijf-formulier .error-text {
+    display: none; }
