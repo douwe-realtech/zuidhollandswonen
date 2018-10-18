@@ -52,6 +52,7 @@ class Section extends Component {
       this.props.subs.forEach (function(el, i) {
         subs.push(<Sub 
           id    = {i} 
+          key = {i}
           title   = {el[0]}
           text  = {el[1]} 
           />

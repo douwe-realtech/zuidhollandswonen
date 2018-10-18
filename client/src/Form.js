@@ -1,4 +1,5 @@
 import React, { Component} from 'react';
+import axios from 'axios'
 import PropTypes from 'prop-types'
 
 // Bouwnummervoorkeur
@@ -218,18 +219,26 @@ class Form extends React.Component {
 		this.state = {
 			partner: false
 		}
-		this.handleInputChange = this.handleInputChange.bind(this)
+		this.handleInputChange = this.handleInputChange.bind(this);
+		this.onSubmit = this.onSubmit.bind(this);
 	}
 
 	handleInputChange(e) {
 		const target = e.target;
-		console.log(target.value)
 		const value = target.type === 'checkbox' ? target.checked : target.value;
 		const name = target.id;
 		this.setState({
 			[name]: value
 		})
 
+	}
+
+	onSubmit(e) {
+		e.preventDefault();
+		axios.post('/sendform', this.state)
+			.then(function(res) {
+				console.log(res)
+			})
 	}
 
 	render() {
@@ -241,7 +250,7 @@ class Form extends React.Component {
 				isPartner={true}
 				state={this.state}/> : ''
 		return (
-			<form id="inschrijf-formulier" className="section">
+			<form id="inschrijf-formulier" className="section" onSubmit={this.onSubmit}>
 				<div className="content center">
 					<h1>Inschrijven</h1>
 					<Fieldset 
