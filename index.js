@@ -25,15 +25,18 @@ var mailOptions = {
 
 app.post('/sendform', (req, res) => {
   console.log(req.body)
+  let response = 'transporter did nothing';
   mailOptions.text = JSON.stringify(req.body, null, 2);
 	transporter.sendMail(mailOptions, function(error, info){
     if (error) {
+      response = 'Error: ' + erro
       console.log(error);
     } else {
+      response = 'Email sent: ' + info.response;
       console.log('Email sent: ' + info.response);
     }
   });
-  res.end('It worked!');
+  res.end(response);
 })
 
 app.get('*', (req, res) => {

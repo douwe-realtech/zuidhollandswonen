@@ -18,8 +18,8 @@ class Nav extends Component {
           <div className="menu">
             <AnchorLink href="#hero">Home</AnchorLink>
             <AnchorLink href="#introductie">Over</AnchorLink>
-            <AnchorLink href="#ligging">ligging</AnchorLink>
-            <AnchorLink href="#woningen">woningen</AnchorLink>
+            <AnchorLink href="#ligging">Ligging</AnchorLink>
+            <AnchorLink href="#woningen">Woningen</AnchorLink>
             <AnchorLink href="#inschrijf-formulier">Inschrijven</AnchorLink>
             <AnchorLink href="#contact">Contact</AnchorLink>
           </div>
