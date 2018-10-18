@@ -29,6 +29,7 @@ app.post('/sendform', (req, res) => {
       console.log('Email sent: ' + info.response);
     }
   });
+  res.end('It worked!');
 })
 
 app.get('*', (req, res) => {
