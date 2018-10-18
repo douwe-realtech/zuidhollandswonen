@@ -248,15 +248,15 @@ class Form extends React.Component {
 			.then(function(res) {
 				self.setState({
 					state: 2
-					console.log(res)
 				})
+				console.log(res)
 				if (element) element.scrollIntoView();
 			})
 			.catch(function(err) {
 				self.setState({
 					state: 3
-					console.log(res)
 				})
+				console.log(err)
 				if (element) element.scrollIntoView();
 			})
 	}

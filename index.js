@@ -29,14 +29,14 @@ app.post('/sendform', (req, res) => {
   mailOptions.text = JSON.stringify(req.body, null, 2);
 	transporter.sendMail(mailOptions, function(error, info){
     if (error) {
-      response = 'Error: ' + erro
+      response = 'Error: ' + error
       console.log(error);
     } else {
       response = 'Email sent: ' + info.response;
       console.log('Email sent: ' + info.response);
     }
+    res.end(response);
   });
-  res.end(response);
 })
 
 app.get('*', (req, res) => {
