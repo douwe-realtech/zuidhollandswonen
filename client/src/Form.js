@@ -217,7 +217,9 @@ class Form extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			partner: false
+			state: 0,
+			partner: false,
+			bouwnummer: 1
 		}
 		this.handleInputChange = this.handleInputChange.bind(this);
 		this.onSubmit = this.onSubmit.bind(this);
@@ -235,9 +237,25 @@ class Form extends React.Component {
 
 	onSubmit(e) {
 		e.preventDefault();
-		axios.post('/sendform', this.state)
+		var self = this;
+		self.setState({
+			state: 1
+		})
+		const element = document.getElementById('inschrijf-formulier');
+
+		const {partner, state, ...data} = this.state
+		axios.post('/sendform', data)
 			.then(function(res) {
-				console.log(res)
+				self.setState({
+					state: 2
+				})
+				if (element) element.scrollIntoView();
+			})
+			.catch(function(err) {
+				self.setState({
+					state: 3
+				})
+				if (element) element.scrollIntoView();
 			})
 	}
 
@@ -248,24 +266,46 @@ class Form extends React.Component {
 				change={this.handleInputChange} 
 				title="Uw Partner"
 				isPartner={true}
-				state={this.state}/> : ''
+				state={this.state}/> : '';
+		let body;
+		switch(this.state.state) {
+			case 0:
+				body = <div className="content center">
+				<h1>Inschrijven</h1>
+				<Fieldset 
+					fields={gebruiker} 
+					change={this.handleInputChange} 
+					title="Uw Gegevens"
+					state={this.state}/>
+				<Fieldset 
+					fields={overig} 
+					change={this.handleInputChange}
+					title="Uw Woning"
+					state={this.state}/>
+				{partnerForm}
+				<button className="button">Inschrijven</button>
+				</div>
+				break;
+			case 1:
+				body = <div className="content center">
+				<h1>Bezig met versturen</h1>
+				</div>
+				break;
+			case 2:
+				body = <div className="content center">
+				<h1>Inschrijving geslaagd</h1>
+				</div>
+				break;
+			case 3:
+				body = <div className="content center">
+				<h1>Inschrijving mislukt</h1>
+				<p>Onze excuses, probeer het later nogmaals altublieft.</p>
+				</div>
+				break;
+			}
 		return (
 			<form id="inschrijf-formulier" className="section" onSubmit={this.onSubmit}>
-				<div className="content center">
-					<h1>Inschrijven</h1>
-					<Fieldset 
-						fields={gebruiker} 
-						change={this.handleInputChange} 
-						title="Uw Gegevens"
-						state={this.state}/>
-					<Fieldset 
-						fields={overig} 
-						change={this.handleInputChange}
-						title="Uw Woning"
-						state={this.state}/>
-					{partnerForm}
-				</div>
-				<button className="button">Inschrijven</button>
+				{body}
 			</form>
 		)
 	}
