@@ -21,7 +21,7 @@ var mailOptions = {
   text: 'That was easy!'
 };
 
-app.get('/sendform', (req, res) => {
+app.post('/sendform', (req, res) => {
 	transporter.sendMail(mailOptions, function(error, info){
     if (error) {
       console.log(error);
