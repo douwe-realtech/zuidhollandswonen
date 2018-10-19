@@ -16,44 +16,45 @@ import PropTypes from 'prop-types'
 const gebruiker = [
 	{
 		type: 'text',
-		id: 'voornaam',
+		id: 'FNAME',
 		label: 'Voornaam',
 		errortext: 'Geef een voornaam op',
 		required: true,
 	}, 	{
 		type: 'text',
-		id: 'achternaam',
+		id: 'LNAME',
 		label: 'Achternaam',
 		errortext: 'Geef een achternaam op',
 		required: true,
 	}, 	{
-		type: 'date',
-		id: 'geboortedatum',
+		type: 'text',
+		id: 'BIRTH',
 		label: 'Geboortedatum',
+		placeholder: 'DD-MM-JJJJ',
 		errortext: 'Geef een geboortedatum op',
 		required: true,
 	}, {
 		type: 'email',
-		id: 'email',
+		id: 'EMAIL',
 		label: 'Emailadres',
 		errortext: 'Geef een emailadres op',
 		required: true,
 	}, {
 		type: 'number',
-		id: 'telefoon',
+		id: 'PHONE',
 		label: 'Telefoonnummer',
 		placeholder: '0612345678',
 		errortext: 'Geef een 10 cijferig telefoonnummer op',
 		required: true,
 	},  {
 		type: 'text',
-		id: 'adres',
+		id: 'ADDRESS',
 		label: 'Straatnaam en huisnummer',
 		errortext: 'Geef een adres op',
 		required: true,
 	},	{
 		type: 'text',
-		id: 'postcode',
+		id: 'POSTAL',
 		label: 'Postcode',
 		placeholder: '1234AB',
 		// pattern: '/^[1-9][0-9]{3}[\s]?[A-Za-z]{2}$/i',
@@ -61,19 +62,19 @@ const gebruiker = [
 		required: true,
 	}, 	{
 		type: 'text',
-		id: 'woonplaats',
+		id: 'CITY',
 		label: 'Woonplaats',
 		errortext: 'Geef een woonplaats op',
 		required: true,
 	},	{
 		type: 'number',
-		id: 'salaris',
+		id: 'SALARY',
 		label: 'Bruto jaarsalaris',
 		errortext: 'Geef uw salaris op',
 		required: true,
 	},	{
 		type: 'number',
-		id: 'eigengeld',
+		id: 'MONEY',
 		label: 'Eigen geld',
 		errortext: 'Geef uw eigengeld op',
 		required: true,
@@ -83,7 +84,7 @@ const gebruiker = [
 const overig = [
 	{
 		type: 'select',
-		id: 'bouwnummer',
+		id: 'BNUMBER',
 		label: 'Bouwnummervoorkeur',
 		errortext: 'Geef een bouwnummer op',
 		required: true,
@@ -123,7 +124,7 @@ class Fieldset extends Component {
 		let {formFields} = this;
 		const {label, options, ...attrs} = props
 		const hasError = (props.hasError ? ' has-error' : '');
-		attrs.id += (this.props.isPartner ? '-partner' : '')
+		attrs.id = (this.props.isPartner ? 'P' : '') + attrs.id
 
 		switch(props.type) {
 			case 'text':
@@ -219,7 +220,7 @@ class Form extends React.Component {
 		this.state = {
 			state: 0,
 			partner: false,
-			bouwnummer: 1
+			BNUMBER: 1
 		}
 		this.handleInputChange = this.handleInputChange.bind(this);
 		this.onSubmit = this.onSubmit.bind(this);

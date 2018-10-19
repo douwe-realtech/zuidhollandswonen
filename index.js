@@ -2,6 +2,8 @@ var express = require('express');
 var path = require('path')
 var mailer = require('nodemailer');
 var bodyParser = require('body-parser')
+var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+var xhr = new XMLHttpRequest();
 
 const app = express();
 
@@ -24,23 +26,33 @@ var mailOptions = {
 };
 
 app.post('/sendform', (req, res) => {
-  console.log(req.body)
-  let response = 'transporter did nothing';
-  mailOptions.text = JSON.stringify(req.body, null, 2);
-	transporter.sendMail(mailOptions, function(error, info){
-    if (error) {
-      response = 'Error: ' + error
-      console.log(error);
-    } else {
-      response = 'Email sent: ' + info.response;
-      console.log('Email sent: ' + info.response);
+  var data = {};
+  data["email_address"] = req.body.EMAIL
+  data["status"] = "subscribed"
+  data["merge_fields"] = req.body
+  var json = JSON.stringify(data);
+  console.log(json);
+
+  // construct an HTTP request
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", "https://us15.api.mailchimp.com/3.0/lists/a9f97aa81f/members/");
+  xhr.setRequestHeader('Authorization', 'Basic aGVsbWhldXM6NjQyOTBlZmZmNThkN2IzYWU4Nzk3MTgwY2JhNTk1NjktdXMxNQ==' );
+
+  xhr.onreadystatechange = function () {
+    console.log(xhr.status)
+    if(xhr.readyState === 4 && xhr.status === 400) {
+      console.log(xhr.responseText);
     }
-    res.end(response);
-  });
+  };
+
+  // send the collected data as JSON
+  xhr.send(JSON.stringify(data));
+
+  res.send('Request send');
 })
 
 app.get('*', (req, res) => {
-	res.sendFile(path.join(__dirname+'client/build/index.html'));
+	res.sendFile(path.join(__dirname+'/client/build/index.html'));
 })
 
 const port = process.env.PORT || 5000;
