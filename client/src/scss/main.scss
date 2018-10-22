@@ -178,7 +178,7 @@ p {
 #hero {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: flex-end;
 	align-items: center;
 
 	height: 70vh;
@@ -230,25 +230,36 @@ p {
 		background-position: center;
 		background-size: cover;
 	}
+}
 
-	.button {
-		font-family: 'Montserrat', serif;
-		font-weight: 700;
-		font-size: 1.5rem;
-		text-transform: uppercase;
-		border: none;
-		text-decoration: none;
-		background: $primary;
-		color: $dark-gray !important;
-		padding: 1rem 1.5rem;
-		margin-top: 0rem;
-		margin-bottom: 2rem;
-		cursor: pointer;
-		transition: opacity 0.2s ease-in-out;
-		border-radius: 2px;
+.button {
+	font-family: 'Montserrat', serif;
+	font-weight: 700;
+	font-size: 1.5rem;
+	text-transform: uppercase;
+	border: none;
+	text-decoration: none;
+	background: $primary;
+	color: $dark-gray !important;
+	padding: 1rem 1.5rem;
+	margin-top: 0rem;
+	margin-bottom: 2rem;
+	cursor: pointer;
+	transition: opacity 0.2s ease-in-out;
+	border-radius: 2px;
+
+	&:hover {
+		opacity: 0.8;
+	}
+
+	&.inverted {
+		background: $dark-gray !important;
+		color: $light-gray !important;
+		transition: margin 0.2s ease-in-out;
 
 		&:hover {
-			opacity: 0.8;
+			opacity: 1;
+			margin-bottom: 1.8rem;
 		}
 	}
 }

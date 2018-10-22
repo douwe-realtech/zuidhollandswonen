@@ -134,7 +134,7 @@ p {
 #hero {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   height: 70vh;
   width: 100%;
@@ -169,23 +169,31 @@ p {
     width: 100%;
     background-position: center;
     background-size: cover; }
-  .section .button {
-    font-family: 'Montserrat', serif;
-    font-weight: 700;
-    font-size: 1.5rem;
-    text-transform: uppercase;
-    border: none;
-    text-decoration: none;
-    background: #D2AE90;
-    color: #403F47 !important;
-    padding: 1rem 1.5rem;
-    margin-top: 0rem;
-    margin-bottom: 2rem;
-    cursor: pointer;
-    transition: opacity 0.2s ease-in-out;
-    border-radius: 2px; }
-    .section .button:hover {
-      opacity: 0.8; }
+
+.button {
+  font-family: 'Montserrat', serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  border: none;
+  text-decoration: none;
+  background: #D2AE90;
+  color: #403F47 !important;
+  padding: 1rem 1.5rem;
+  margin-top: 0rem;
+  margin-bottom: 2rem;
+  cursor: pointer;
+  transition: opacity 0.2s ease-in-out;
+  border-radius: 2px; }
+  .button:hover {
+    opacity: 0.8; }
+  .button.inverted {
+    background: #403F47 !important;
+    color: #f0fafd !important;
+    transition: margin 0.2s ease-in-out; }
+    .button.inverted:hover {
+      opacity: 1;
+      margin-bottom: 1.8rem; }
 
 .section:nth-child(3), .section:nth-child(4), .section:nth-child(6) {
   background: #403F47;
