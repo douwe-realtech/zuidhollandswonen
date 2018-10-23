@@ -1,17 +1,16 @@
 import React, { Component} from 'react';
+import ReactPixel from 'react-facebook-pixel'
 import axios from 'axios'
 import PropTypes from 'prop-types'
 
-// Bouwnummervoorkeur
+const options = {
+    autoConfig: true,   // set pixel's autoConfig
+    debug: true,     // enable logs
+};
 
-// Postcode
-// Adres
-// Woonplaats
-
-// Bruto jaarsalaris
-// Eigen geld
-
-// Bent u de enige koper?
+ReactPixel.init('2159723064348101', {}, options);
+ReactPixel.pageView();
+ReactPixel.fbq('track', 'PageView');
 
 const gebruiker = [
 	{
@@ -238,6 +237,7 @@ class Form extends React.Component {
 
 	onSubmit(e) {
 		e.preventDefault();
+		ReactPixel.track('submit', this.state ) 
 		var self = this;
 		self.setState({
 			state: 1
