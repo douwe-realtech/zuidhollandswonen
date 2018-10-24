@@ -237,7 +237,7 @@ class Form extends React.Component {
 
 	onSubmit(e) {
 		e.preventDefault();
-		ReactPixel.track('submit', this.state ) 
+		ReactPixel.track('SubmitApplication') 
 		var self = this;
 		self.setState({
 			state: 1
