@@ -23,6 +23,78 @@
 #pic-contact {
   background-image: url(img/huis.jpg); }
 
+#opendag-container {
+  width: 100%;
+  min-height: 100vh;
+  background-image: url(img/hero2.jpg);
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  z-index: -10; }
+  #opendag-container #form {
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.95);
+    max-width: 20rem;
+    max-height: 100vh;
+    padding: 2rem;
+    margin: 1rem 0 1rem 1rem;
+    box-shadow: 0 0 4rem 0 rgba(0, 0, 0, 0.5);
+    text-align: center; }
+    #opendag-container #form .adres {
+      line-height: 1.1em; }
+    #opendag-container #form .form-item {
+      width: 100%;
+      text-align: left; }
+      #opendag-container #form .form-item label {
+        text-align: left;
+        font-weight: 600;
+        display: block;
+        font-size: 0.8rem;
+        line-height: 0.8em;
+        margin: 1rem 0 0.2rem 0;
+        color: #403F47; }
+      #opendag-container #form .form-item input {
+        border: none;
+        border-bottom: 1px solid #888;
+        width: 100%;
+        font-size: 1.5rem;
+        border-radius: 0;
+        background: transparent; }
+    #opendag-container #form button.button {
+      font-size: 1.2em;
+      width: 20rem;
+      margin: 1rem 0 0 0; }
+  #opendag-container #text {
+    margin: 1rem 1rem 1rem 0;
+    padding: 2rem;
+    z-index: 1;
+    color: white;
+    text-align: center;
+    background: rgba(51, 51, 56, 0.95);
+    box-shadow: 0 0 4rem 0 rgba(0, 0, 0, 0.5);
+    text-shadow: 0 0 0.2rem black;
+    max-width: 30rem; }
+    #opendag-container #text h1 {
+      color: #D2AE90; }
+
+@media screen and (max-width: 58em) {
+  #opendag-container {
+    flex-direction: column;
+    align-items: stretch; }
+    #opendag-container #form {
+      max-width: 100%;
+      margin: 1rem;
+      order: 2; }
+      #opendag-container #form .center {
+        width: 100%; }
+    #opendag-container #text {
+      max-width: 100%;
+      order: 1;
+      margin: 1rem; } }
+
 html, body {
   font-family: 'Montserrat', serif;
   font-weight: 300;

@@ -51,6 +51,32 @@ app.post('/sendform', (req, res) => {
   res.send('Request send');
 })
 
+app.post('/opendag/send', (req, res) => {
+  var data = {};
+  data["email_address"] = req.body.EMAIL
+  data["status"] = "subscribed"
+  data["merge_fields"] = req.body
+  var json = JSON.stringify(data);
+  console.log(json);
+
+  // construct an HTTP request
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", "https://us15.api.mailchimp.com/3.0/lists/55382268b6/members/");
+  xhr.setRequestHeader('Authorization', 'Basic aGVsbWhldXM6NjQyOTBlZmZmNThkN2IzYWU4Nzk3MTgwY2JhNTk1NjktdXMxNQ==' );
+
+  xhr.onreadystatechange = function () {
+    console.log(xhr.status)
+    if(xhr.readyState === 4 && xhr.status === 400) {
+      console.log(xhr.responseText);
+    }
+  };
+
+  // send the collected data as JSON
+  xhr.send(JSON.stringify(data));
+
+  res.send('Request send');
+})
+
 app.get('*', (req, res) => {
 	res.sendFile(path.join(__dirname+'/client/build/index.html'));
 })
