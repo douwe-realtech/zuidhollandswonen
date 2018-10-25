@@ -12,6 +12,7 @@ function Routing() {
 			<div>
 			<Route exact path="/" component={App} />
 			<Route exact path="/opendag" component={OpenDag} />
+			<Route exact path="/thankyou" render={()=><OpenDag state={2}/>}/>
 			</div>
 		</Router>
 	);

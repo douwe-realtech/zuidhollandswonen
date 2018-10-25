@@ -1,13 +1,23 @@
 import React, { Component } from 'react';
+import {withRouter} from 'react-router-dom'
 import ReactPixel from 'react-facebook-pixel'
 import axios from 'axios'
 import './App.css';
+
+const options = {
+    autoConfig: true,   // set pixel's autoConfig
+    debug: true,     // enable logs
+};
+
+ReactPixel.init('2159723064348101', {}, options);
+ReactPixel.pageView();
+ReactPixel.fbq('track', 'PageView');
 
 class OpenDag extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			state: 0,
+			state: this.props.state || 0,
 		}
 		this.handleInputChange = this.handleInputChange.bind(this);
 		this.onSubmit = this.onSubmit.bind(this);
@@ -38,6 +48,7 @@ class OpenDag extends Component {
 				self.setState({
 					state: 2
 				})
+				self.props.history.push('/thankyou')
 				console.log(res)
 			})
 			.catch(function(err) {
@@ -49,6 +60,7 @@ class OpenDag extends Component {
 	}
 
 	render () {
+		console.log(this.state.state)
 		let body;
 		switch(this.state.state) {
 			case 0:
