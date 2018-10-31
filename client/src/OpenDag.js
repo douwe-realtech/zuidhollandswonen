@@ -108,6 +108,7 @@ class OpenDag extends Component {
 				</div>
 				<div id='text'>
 					<h1>Sir Winston Churchilllaan</h1>
+					<h3>vanaf €569.000,-</h3>
 					<p>De twee-onder-een kapwoningen liggen op fraaie percelen van 358 tot 410 m2 eigen grond. Alle woningen hebben een woonoppervlakte van maar liefst ca. 149 m2. Via de entree en de hal komt u in de woonkamer waar de diverse prachtige raampartijen zorgen voor een goede lichtinval. De keuken en de afzonderlijke berging maken de begane grond compleet. De 1e etage heeft 3 slaapkamers, goede badkamer en de mogelijkheid voor het creëren van een 2e badkamer of walk in closet.</p>
 				</div>
 			</div>
