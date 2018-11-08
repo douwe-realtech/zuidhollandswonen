@@ -17,7 +17,6 @@ class Nav extends Component {
 
           <div className="menu">
             <AnchorLink href="#hero">Home</AnchorLink>
-            <AnchorLink href="#introductie">Start Verkoop</AnchorLink>
             <AnchorLink href="#ligging">Project</AnchorLink>
             <AnchorLink href="#woningen">Woningen</AnchorLink>
             <AnchorLink href="#inschrijf-formulier">Inschrijven</AnchorLink>
@@ -92,9 +91,15 @@ class App extends Component {
           </div>
 
           <Section 
-            id    = "ligging"
+            id    = "introductie"
             title = "Sir Winston Churchilllaan"
-            text  = "De Sir Winston Churchilllaan in Rijswijk is één van de oost-west verbindingen tussen Wateringen en Oud-Rijswijk. Het perceel Sir Winston Churchilllaan 1013, het kavel waarop Lammertink projectontwikkeling vier woningen van het type twee-onder-een-kap realiseert, ligt aan de westzijde en aan de rand van de woonwijk Eikelenburg. De groei van Rijswijk is langs de Sir Winston Churchilllaan goed herkenbaar, van Oud Rijswijk in het oosten, naar de Plaspoelpolder en het moderne centrum in het midden, tot Eikelenburg in het westen. De diversiteit van de bebouwing langs de Sir Winston Churchilllaan is groot. De oriëntatie van de woonwijken is aan de westzijde voornamelijk met de rug naar de Sir Winston Churchilllaan en in het oosten meer met voorkant georiënteerd op de Sir Winston Churchilllaan. Tussen de projectmatige ontwikkelingen die aan de Sir Winston Churchilllaan grenzen, is het oorspronkelijke lint van de Sir Winston Churchilllaan nabij nummer 1013 herkenbaar door een aantal vrijstaande woningen. Op het onderhavige perceel stond oorspronkelijk ook een vrijstaande woning, doch ten behoeve van de herontwikkeling van het woonperceel naar in totaal vijf woningen, is de bestaande woning gesloopt. Op het terrein is ten tijde van de start van de ontwikkeling en voor de bouw van de tweekappers, inmiddels één woning gerealiseerd."
+            text  = "De Sir Winston Churchilllaan in Rijswijk is één van de oost-west verbindingen tussen Wateringen en Oud-Rijswijk. Het perceel Sir Winston Churchilllaan 1013, het kavel waarop Lammertink projectontwikkeling vier woningen van het type twee-onder-een-kap realiseert, ligt aan de westzijde en aan de rand van de woonwijk Eikelenburg. De groei van Rijswijk is langs de Sir Winston Churchilllaan goed herkenbaar, van Oud Rijswijk in het oosten, naar de Plaspoelpolder en het moderne centrum in het midden, tot Eikelenburg in het westen. De diversiteit van de bebouwing langs de Sir Winston Churchilllaan is groot."
+          />
+
+          <Section 
+            id    = "ligging"
+            title = "Het Project"
+            text  = "De oriëntatie van de woonwijken is aan de westzijde voornamelijk met de rug naar de Sir Winston Churchilllaan en in het oosten meer met voorkant georiënteerd op de Sir Winston Churchilllaan. Tussen de projectmatige ontwikkelingen die aan de Sir Winston Churchilllaan grenzen, is het oorspronkelijke lint van de Sir Winston Churchilllaan nabij nummer 1013 herkenbaar door een aantal vrijstaande woningen. Op het onderhavige perceel stond oorspronkelijk ook een vrijstaande woning, doch ten behoeve van de herontwikkeling van het woonperceel naar in totaal vijf woningen, is de bestaande woning gesloopt. Op het terrein is ten tijde van de start van de ontwikkeling en voor de bouw van de tweekappers, inmiddels één woning gerealiseerd."
             subs  = {[
               ["Bestemmingsplan",
               "De westelijke zijde van het perceel grenst aan het fietspad, een belangrijke langzaam-verkeersentree naar Eikelenburg.Het bestemmingsplan is het publiekrechtelijk kader waaraan bouwplannen moeten voldoen. In het bestemmingsplan zijn de regels vastgelegd waaraan voldaan moet worden voor wat betreft bouwhoogte, het bebouwingspercentage of bouwvlak, de afstand tot de erfgrenzen, de erfafscheidingen en dergelijke. "],
